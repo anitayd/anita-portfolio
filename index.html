@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anita Yadav — Senior Digital & E-commerce Marketer. ISB grad, ex-Amazon. 9.5 years scaling ₹500Cr portfolios." />
+  <title>Anita Yadav | Senior Digital & E-commerce Marketer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================
+       DESIGN TOKENS
+    =========================== */
+    :root {
+      --bg:          #F7F6F2;
+      --bg-card:     #FFFFFF;
+      --navy:        #152640;
+      --navy-mid:    #1E3A5F;
+      --navy-light:  #2E537A;
+      --blue:        #A8C8E8;
+      --blue-soft:   #D6E9F8;
+      --blue-btn:    #4A90C4;
+      --yellow:      #F5C842;
+      --yellow-soft: #FEF3C7;
+      --text:        #1A2B40;
+      --text-muted:  #5A6A7E;
+      --border:      #DDE4ED;
+      --radius:      12px;
+      --radius-lg:   20px;
+      --shadow-sm:   0 2px 8px rgba(21,38,64,.07);
+      --shadow-md:   0 6px 24px rgba(21,38,64,.11);
+      --shadow-lg:   0 16px 48px rgba(21,38,64,.15);
+      --transition:  0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    /* ===========================
+       TYPOGRAPHY
+    =========================== */
+    h1, h2, h3, h4 { line-height: 1.25; font-weight: 700; }
+    h1 { font-family: 'Playfair Display', serif; }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue-btn);
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--navy);
+      margin-top: .4rem;
+    }
+
+    /* ===========================
+       LAYOUT HELPERS
+    =========================== */
+    .container {
+      width: min(1120px, 100% - 2.5rem);
+      margin-inline: auto;
+    }
+    section { padding: 80px 0; }
+    .section-header { margin-bottom: 48px; }
+
+    /* ===========================
+       NAV
+    =========================== */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      background: rgba(247,246,242,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    #nav.scrolled {
+      border-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+    .nav-logo span { color: var(--blue-btn); }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--navy);
+      background: var(--blue-soft);
+    }
+    .nav-cta {
+      font-size: .82rem !important;
+      font-weight: 600 !important;
+      color: var(--bg-card) !important;
+      background: var(--navy) !important;
+      padding: 7px 16px !important;
+      border-radius: 8px !important;
+    }
+    .nav-cta:hover { background: var(--navy-mid) !important; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      border-radius: 8px;
+    }
+    .nav-hamburger span {
+      width: 22px; height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      padding: 12px 16px 16px;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 8px;
+      transition: background var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--blue-soft); }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+      padding-top: 120px;
+      padding-bottom: 80px;
+      background: linear-gradient(135deg, var(--bg) 60%, var(--blue-soft) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -180px;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,200,232,.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-soft);
+      border: 1px solid rgba(245,200,66,.4);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #92710A;
+      margin-bottom: 20px;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+    .hero-name {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      color: var(--navy);
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 500;
+      color: var(--blue-btn);
+      margin-bottom: 16px;
+    }
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .hero-tagline {
+      font-size: clamp(.95rem, 1.6vw, 1.1rem);
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .hero-tagline strong { color: var(--navy); }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(21,38,64,.25);
+    }
+    .btn-primary:hover {
+      background: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(21,38,64,.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .hero-photo {
+      flex-shrink: 0;
+    }
+    .photo-ring {
+      width: clamp(160px, 18vw, 220px);
+      height: clamp(160px, 18vw, 220px);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-soft) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 6px #fff, 0 0 0 10px var(--blue-soft), var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-placeholder-icon {
+      width: 70%;
+      height: 70%;
+      opacity: .45;
+    }
+    .photo-label {
+      position: absolute;
+      bottom: 8px;
+      font-size: .65rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,.85);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    /* ===========================
+       IMPACT SNAPSHOT
+    =========================== */
+    #impact {
+      padding: 0;
+      margin: -20px 0 0;
+    }
+    .impact-bar {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 40px 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-bar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    }
+    .impact-item {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 8px;
+    }
+    .impact-item + .impact-item {
+      border-left: 1px solid rgba(168,200,232,.2);
+    }
+    .impact-number {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: var(--yellow);
+      line-height: 1.1;
+      display: block;
+    }
+    .impact-label {
+      font-size: .82rem;
+      color: rgba(255,255,255,.72);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ===========================
+       SKILLS & TOOLS
+    =========================== */
+    #skills { background: var(--bg-card); }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .tool-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .tool-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-3px);
+    }
+    .tool-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .tool-name {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .skills-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .skill-category {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+    }
+    .skill-category-title {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue-btn);
+      margin-bottom: 12px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-tag {
+      font-size: .78rem;
+      color: var(--text);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ===========================
+       CASE STUDIES
+    =========================== */
+    #casestudies { background: var(--bg); }
+    .accordion { display: flex; flex-direction: column; gap: 14px; }
+    .accordion-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .accordion-item.open {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-md);
+    }
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 24px;
+      text-align: left;
+      transition: background var(--transition);
+    }
+    .accordion-trigger:hover { background: var(--bg); }
+    .accordion-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--blue-soft);
+      color: var(--blue-btn);
+      font-size: .8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .accordion-item.open .accordion-num {
+      background: var(--navy);
+      color: #fff;
+    }
+    .accordion-header-text { flex: 1; }
+    .accordion-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .accordion-preview {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    .accordion-chevron {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--bg);
+      transition: transform var(--transition), background var(--transition);
+    }
+    .accordion-item.open .accordion-chevron {
+      transform: rotate(180deg);
+      background: var(--blue-soft);
+    }
+    .accordion-chevron svg { display: block; }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s cubic-bezier(.4,0,.2,1);
+    }
+    .accordion-body-inner {
+      padding: 0 24px 28px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .cs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .cs-block-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blue-btn);
+      margin-bottom: 8px;
+    }
+    .cs-block-text {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .cs-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .cs-metric {
+      background: var(--yellow-soft);
+      border: 1px solid rgba(245,200,66,.35);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #7A5A0A;
+    }
+
+    /* ===========================
+       CAREER TIMELINE
+    =========================== */
+    #career { background: var(--bg-card); }
+    .timeline { display: flex; flex-direction: column; gap: 16px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 20px;
+    }
+    .timeline-spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .timeline-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--blue-btn);
+      border: 3px solid var(--bg-card);
+      box-shadow: 0 0 0 3px var(--blue-soft);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .timeline-item.muted .timeline-dot {
+      background: var(--border);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+    .timeline-line {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      margin: 8px 0;
+      min-height: 24px;
+    }
+    .timeline-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 4px;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .timeline-card.open {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-trigger {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 20px;
+      text-align: left;
+      transition: background var(--transition);
+    }
+    .timeline-trigger:hover { background: var(--bg-card); }
+    .tl-company {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .tl-role {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--blue-btn);
+      margin-top: 2px;
+    }
+    .tl-dates {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .tl-header-text { flex: 1; }
+    .tl-badge {
+      flex-shrink: 0;
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--yellow-soft);
+      color: #92710A;
+    }
+    .tl-badge.blue {
+      background: var(--blue-soft);
+      color: var(--navy-mid);
+    }
+    .timeline-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s cubic-bezier(.4,0,.2,1);
+    }
+    .timeline-body-inner {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .tl-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tl-bullet {
+      display: flex;
+      gap: 10px;
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .tl-bullet::before {
+      content: '›';
+      color: var(--blue-btn);
+      font-size: 1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05em;
+    }
+
+    /* ===========================
+       ABOUT
+    =========================== */
+    #about {
+      background: var(--bg);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: .95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .highlight-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .highlight-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue-btn);
+      margin-bottom: 4px;
+    }
+    .highlight-value {
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    /* ===========================
+       CONTACT
+    =========================== */
+    #contact {
+      background: var(--navy);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,200,232,.12) 0%, transparent 70%);
+    }
+    .contact-inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-eyebrow {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .contact-heading {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 16px;
+    }
+    .contact-sub {
+      font-size: .95rem;
+      color: rgba(255,255,255,.65);
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+    .contact-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--navy);
+    }
+    .btn-white:hover {
+      background: var(--blue-soft);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,.35);
+    }
+    .btn-ghost:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,.1);
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 24px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: .78rem;
+      color: rgba(255,255,255,.4);
+    }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-links a {
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: rgba(255,255,255,.85); }
+
+    /* ===========================
+       STICKY WIDGET
+    =========================== */
+    #sticky-widget {
+      position: fixed;
+      bottom: 32px;
+      right: 28px;
+      z-index: 800;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sticky-btn {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      position: relative;
+    }
+    .sticky-btn:hover { transform: translateY(-3px) scale(1.08); }
+    .sticky-btn::before {
+      content: attr(data-tip);
+      position: absolute;
+      right: 60px;
+      white-space: nowrap;
+      background: var(--navy);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .sticky-btn:hover::before { opacity: 1; }
+    .sticky-linkedin { background: #0077B5; }
+    .sticky-resume  { background: var(--navy); }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+    =========================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-photo { justify-self: center; order: -1; }
+      .hero-location, .hero-badge { justify-content: center; }
+      .hero-ctas { justify-content: center; }
+      .hero-tagline { margin-inline: auto; }
+      .impact-bar {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 32px 24px;
+      }
+      .impact-item + .impact-item { border-left: none; }
+      .impact-item:nth-child(odd) { border-right: 1px solid rgba(168,200,232,.2); }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    @media (max-width: 640px) {
+      section { padding: 56px 0; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .impact-bar {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 24px 16px;
+        border-radius: var(--radius);
+      }
+      .impact-item:nth-child(odd) { border-right: none; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .accordion-trigger { padding: 16px; }
+      .accordion-body-inner { padding: 0 16px 20px; padding-top: 16px; }
+      #sticky-widget {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+      }
+      .sticky-btn::before { display: none; }
+      .footer-inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================
+       NAV
+  ========================= -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#hero">Anita <span>Yadav</span></a>
+      <div class="nav-links" role="list">
+        <a href="#impact" role="listitem">Impact</a>
+        <a href="#skills" role="listitem">Skills</a>
+        <a href="#casestudies" role="listitem">Case Studies</a>
+        <a href="#career" role="listitem">Career</a>
+        <a href="#about" role="listitem">About</a>
+        <a href="#contact" class="nav-cta" role="listitem">Let's Connect</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" role="list" aria-hidden="true">
+      <a href="#impact" role="listitem">Impact</a>
+      <a href="#skills" role="listitem">Skills</a>
+      <a href="#casestudies" role="listitem">Case Studies</a>
+      <a href="#career" role="listitem">Career</a>
+      <a href="#about" role="listitem">About</a>
+      <a href="#contact" role="listitem">Let's Connect</a>
+    </div>
+  </nav>
+
+  <!-- ========================
+       HERO
+  ========================= -->
+  <section id="hero" aria-label="Introduction">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            Open to Senior Digital Marketing &amp; Growth Roles
+          </div>
+          <h1 class="hero-name">Anita Yadav</h1>
+          <p class="hero-title">Senior Digital &amp; E-commerce Marketer</p>
+          <p class="hero-location" aria-label="Location: Bangalore, India">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bangalore, India
+          </p>
+          <p class="hero-tagline">
+            Senior marketer who's scaled <strong>₹500Cr portfolios</strong>, launched <strong>500+ products</strong>, and driven <strong>multi-crore growth</strong> at Amazon and tech startups
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary" aria-label="Connect on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              Connect on LinkedIn
+            </a>
+            <a href="#casestudies" class="btn btn-outline" aria-label="View case studies">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              View Case Studies
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="photo-ring" aria-label="Profile photo placeholder">
+            <!-- Placeholder portrait SVG -->
+            <svg class="photo-placeholder-icon" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="28" r="20" fill="rgba(21,38,64,.35)"/>
+              <path d="M6 88c0-18.778 15.222-34 34-34s34 15.222 34 34" fill="rgba(21,38,64,.25)"/>
+            </svg>
+            <span class="photo-label">Add photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       IMPACT SNAPSHOT
+  ========================= -->
+  <section id="impact" aria-label="Impact snapshot">
+    <div class="container">
+      <div class="impact-bar reveal" role="region" aria-label="Key metrics">
+        <div class="impact-item">
+          <span class="impact-number">9.5</span>
+          <p class="impact-label">Years of Digital Marketing Experience</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">₹500Cr</span>
+          <p class="impact-label">Portfolio Revenue Scaled (from ₹300Cr)</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">500+</span>
+          <p class="impact-label">Products Launched to Market</p>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">₹60Cr+</span>
+          <p class="impact-label">Annual Marketing Budgets Managed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       SKILLS & TOOLS
+  ========================= -->
+  <section id="skills" aria-label="Skills and tools">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Capabilities</p>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+      </div>
+
+      <!-- Visual Tool Grid -->
+      <div class="tools-grid reveal" role="list" aria-label="Tools and platforms">
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#FF9900;color:#fff;" aria-hidden="true">A</div>
+          <span class="tool-name">Amazon AMS</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#4285F4;color:#fff;" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 1 1 0-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0 0 12.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
+          </div>
+          <span class="tool-name">Google Ads</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#E37400;color:#fff;" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          </div>
+          <span class="tool-name">Google Analytics</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#34A853;color:#fff;" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          </div>
+          <span class="tool-name">SEO / SEM</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#FFE01B;color:#222;" aria-hidden="true">✉</div>
+          <span class="tool-name">Email Automation</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#A8C8E8;color:#152640;" aria-hidden="true">A/B</div>
+          <span class="tool-name">A/B Testing</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#FF7A59;color:#fff;" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="white" d="M12 6v6l4 2"/></svg>
+          </div>
+          <span class="tool-name">HubSpot</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#21759B;color:#fff;" aria-hidden="true">WP</div>
+          <span class="tool-name">WordPress CMS</span>
+        </div>
+        <div class="tool-card" role="listitem">
+          <div class="tool-icon" style="background:#F5C842;color:#152640;" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+          </div>
+          <span class="tool-name">Performance Mktg</span>
+        </div>
+      </div>
+
+      <!-- Searchable Categories -->
+      <div class="skills-categories reveal" aria-label="Skill categories">
+        <div class="skill-category">
+          <div class="skill-category-title">Performance Marketing</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Paid Search (PPC)</span>
+            <span class="skill-tag">Amazon AMS / DSP</span>
+            <span class="skill-tag">Google Ads</span>
+            <span class="skill-tag">LinkedIn Ads</span>
+            <span class="skill-tag">Retargeting</span>
+            <span class="skill-tag">Bid Management</span>
+            <span class="skill-tag">CPL Optimization</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Analytics &amp; Insights</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Google Analytics 4</span>
+            <span class="skill-tag">Adobe Analytics</span>
+            <span class="skill-tag">Mixpanel</span>
+            <span class="skill-tag">Data Studio</span>
+            <span class="skill-tag">Funnel Analysis</span>
+            <span class="skill-tag">Cohort Analysis</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Conversion Optimisation</div>
+          <div class="skill-tags">
+            <span class="skill-tag">CRO</span>
+            <span class="skill-tag">A/B &amp; Multivariate Testing</span>
+            <span class="skill-tag">Landing Page Optimisation</span>
+            <span class="skill-tag">UX Copywriting</span>
+            <span class="skill-tag">Heatmaps</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Marketing Technology</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HubSpot CRM</span>
+            <span class="skill-tag">Marketo</span>
+            <span class="skill-tag">Salesforce</span>
+            <span class="skill-tag">Mailchimp</span>
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">Hotjar</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Content &amp; Creative</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Brand Strategy</span>
+            <span class="skill-tag">Content Marketing</span>
+            <span class="skill-tag">Copywriting</span>
+            <span class="skill-tag">SEO Content</span>
+            <span class="skill-tag">Video Briefing</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Product Marketing</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Go-to-Market Strategy</span>
+            <span class="skill-tag">Product Positioning</span>
+            <span class="skill-tag">Competitive Analysis</span>
+            <span class="skill-tag">Pricing Strategy</span>
+            <span class="skill-tag">Launch Planning</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Technical</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML / CSS basics</span>
+            <span class="skill-tag">Tag Manager</span>
+            <span class="skill-tag">Pixel Implementation</span>
+            <span class="skill-tag">API Integrations</span>
+            <span class="skill-tag">SQL (basic)</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Project Management</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Asana</span>
+            <span class="skill-tag">OKR Frameworks</span>
+            <span class="skill-tag">Cross-functional Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       CASE STUDIES
+  ========================= -->
+  <section id="casestudies" aria-label="Featured case studies">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Work</p>
+        <h2 class="section-title">Featured Case Studies</h2>
+        <p style="font-size:.9rem;color:var(--text-muted);margin-top:8px;">Click any card to expand the full story.</p>
+      </div>
+
+      <div class="accordion reveal" id="cs-accordion">
+
+        <!-- CS 1 -->
+        <div class="accordion-item" id="cs1">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs1-body">
+            <div class="accordion-num">01</div>
+            <div class="accordion-header-text">
+              <div class="accordion-title">Vedaka Brand Transformation</div>
+              <div class="accordion-preview">Repositioned Amazon's private label from value to premium, driving significant category share gains.</div>
+            </div>
+            <div class="accordion-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="accordion-body" id="cs1-body" role="region">
+            <div class="accordion-body-inner">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-title">Challenge</div>
+                  <p class="cs-block-text">Vedaka was perceived as a low-cost, low-trust private label brand. Customer acquisition costs were high and repeat purchase rates lagged category benchmarks. The brand lacked a distinct identity across its 200+ SKU catalogue.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Strategy</div>
+                  <p class="cs-block-text">Led end-to-end brand repositioning: new visual identity system, refreshed packaging hierarchy, a storytelling-led content framework, and a targeted AMS campaign architecture that surfaced Vedaka to high-intent shoppers at key decision moments.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Results</div>
+                  <p class="cs-block-text">Placeholder — add your real outcomes here. Describe the business impact across revenue, market share, customer metrics, and operational improvements that resulted from this initiative.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">My Role</div>
+                  <p class="cs-block-text">Lead Marketer — end-to-end ownership from brief to execution, coordinating brand, design, category, and agency teams across 3 quarters.</p>
+                </div>
+              </div>
+              <div class="cs-metrics" aria-label="Key metrics">
+                <div class="cs-metric">+XX% Revenue Growth</div>
+                <div class="cs-metric">+XX bps Category Share</div>
+                <div class="cs-metric">XX% Repeat Purchase Lift</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CS 2 -->
+        <div class="accordion-item" id="cs2">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs2-body">
+            <div class="accordion-num">02</div>
+            <div class="accordion-header-text">
+              <div class="accordion-title">Performance Marketing Optimisation at Scale</div>
+              <div class="accordion-preview">Reallocated ₹60Cr+ ad budget using data-driven attribution, generating ₹6Cr in annualised savings.</div>
+            </div>
+            <div class="accordion-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="accordion-body" id="cs2-body" role="region">
+            <div class="accordion-body-inner">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-title">Challenge</div>
+                  <p class="cs-block-text">A ₹60Cr+ annual ad spend was spread across 12+ channels with no unified attribution model. Last-click reporting was over-crediting bottom-funnel channels and under-investing in awareness and mid-funnel touchpoints.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Strategy</div>
+                  <p class="cs-block-text">Built a multi-touch attribution model using GA4 + internal data. Ran a 90-day budget reallocation experiment, shifting 18% of spend from over-indexed channels. Introduced ROAS guardrails and weekly performance rituals with agency partners.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Results</div>
+                  <p class="cs-block-text">Placeholder — replace with the real story. Quantify the savings, the change in ROAS, and any secondary effects on pipeline quality or sales team efficiency.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">My Role</div>
+                  <p class="cs-block-text">Project Owner — designed attribution framework, led agency briefings, and presented budget reallocation recommendations to senior leadership.</p>
+                </div>
+              </div>
+              <div class="cs-metrics" aria-label="Key metrics">
+                <div class="cs-metric">₹6Cr Annualised Savings</div>
+                <div class="cs-metric">+XX% ROAS Improvement</div>
+                <div class="cs-metric">XX% Reduction in CAC</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CS 3 -->
+        <div class="accordion-item" id="cs3">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs3-body">
+            <div class="accordion-num">03</div>
+            <div class="accordion-header-text">
+              <div class="accordion-title">Website Conversion Rate Optimisation</div>
+              <div class="accordion-preview">A systematic CRO programme delivered a +180 bps conversion rate uplift across key landing pages.</div>
+            </div>
+            <div class="accordion-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="accordion-body" id="cs3-body" role="region">
+            <div class="accordion-body-inner">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-title">Challenge</div>
+                  <p class="cs-block-text">High traffic, low conversion. Paid campaign landing pages had a 1.2% CVR — well below industry benchmarks. Exit surveys pointed to trust gaps, poor page speed, and unclear calls-to-action.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Strategy</div>
+                  <p class="cs-block-text">Ran a 6-month structured CRO programme: heatmap analysis (Hotjar), qualitative user interviews, 14 A/B tests covering headlines, social proof placement, form friction, and page speed improvements in partnership with engineering.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Results</div>
+                  <p class="cs-block-text">Placeholder — replace with actual numbers. Describe the before/after CVR, revenue impact, and which specific tests drove the most gains.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">My Role</div>
+                  <p class="cs-block-text">CRO Lead — designed test roadmap, wrote test briefs, interpreted results, and created a reusable CRO playbook adopted by the broader marketing team.</p>
+                </div>
+              </div>
+              <div class="cs-metrics" aria-label="Key metrics">
+                <div class="cs-metric">+180 bps CVR Uplift</div>
+                <div class="cs-metric">14 A/B Tests Shipped</div>
+                <div class="cs-metric">XX% Increase in MQLs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CS 4 -->
+        <div class="accordion-item" id="cs4">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs4-body">
+            <div class="accordion-num">04</div>
+            <div class="accordion-header-text">
+              <div class="accordion-title">B2B SaaS Demand Generation</div>
+              <div class="accordion-preview">Rebuilt demand gen from scratch for a cybersecurity startup, achieving 50% CPL reduction in 6 months.</div>
+            </div>
+            <div class="accordion-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="accordion-body" id="cs4-body" role="region">
+            <div class="accordion-body-inner">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-title">Challenge</div>
+                  <p class="cs-block-text">ColorTokens had strong enterprise technology but low market awareness. The existing demand gen was fragmented, running disconnected LinkedIn and Google campaigns with no nurture flows. CPL exceeded $XX and pipeline quality was poor.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Strategy</div>
+                  <p class="cs-block-text">Built an ABM-influenced demand gen engine: ICP-defined audience segments, a 5-stage HubSpot nurture sequence, gated thought-leadership content (whitepapers, ROI calculators), and LinkedIn lead gen campaigns targeted by title and industry vertical.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Results</div>
+                  <p class="cs-block-text">Placeholder — describe the pipeline impact, CPL reduction, and how this translated into sales-qualified opportunities and closed revenue.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">My Role</div>
+                  <p class="cs-block-text">Head of Digital Marketing — sole owner of demand gen strategy, managed a small agency and coordinated closely with Sales for SLA definition and lead handoff.</p>
+                </div>
+              </div>
+              <div class="cs-metrics" aria-label="Key metrics">
+                <div class="cs-metric">50% CPL Reduction</div>
+                <div class="cs-metric">XX% Pipeline Growth</div>
+                <div class="cs-metric">XX% MQL-to-SQL Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CS 5 -->
+        <div class="accordion-item" id="cs5">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs5-body">
+            <div class="accordion-num">05</div>
+            <div class="accordion-header-text">
+              <div class="accordion-title">New Product Launch Process Improvement</div>
+              <div class="accordion-preview">Designed a scalable launch playbook that enabled 500+ product launches with consistent quality and speed.</div>
+            </div>
+            <div class="accordion-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </button>
+          <div class="accordion-body" id="cs5-body" role="region">
+            <div class="accordion-body-inner">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-title">Challenge</div>
+                  <p class="cs-block-text">New product launches were ad-hoc, slow, and inconsistent. No standardised brief, no cross-functional checklist, and no post-launch review process. Each launch reinvented the wheel, creating bottlenecks and missed go-live deadlines.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Strategy</div>
+                  <p class="cs-block-text">Audited 40 prior launches to identify failure modes. Built a modular launch playbook: standard brief template, RACI matrix, a 6-week pre-launch countdown, and a 30/60/90-day post-launch review framework adopted across the marketing function.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">Results</div>
+                  <p class="cs-block-text">Placeholder — describe the efficiency gains, reduction in time-to-market, and how this process underpinned the 500+ products successfully launched.</p>
+                </div>
+                <div>
+                  <div class="cs-block-title">My Role</div>
+                  <p class="cs-block-text">Process Owner — designed the framework, ran training workshops with 3 cross-functional teams, and maintained the playbook as a living document over 2 years.</p>
+                </div>
+              </div>
+              <div class="cs-metrics" aria-label="Key metrics">
+                <div class="cs-metric">500+ Products Launched</div>
+                <div class="cs-metric">XX% Faster Time-to-Market</div>
+                <div class="cs-metric">XX% On-time Launch Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       CAREER TIMELINE
+  ========================= -->
+  <section id="career" aria-label="Career history">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Career Timeline</h2>
+      </div>
+
+      <div class="timeline reveal">
+
+        <!-- Amazon -->
+        <div class="timeline-item">
+          <div class="timeline-spine">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div>
+            <div class="timeline-card" id="tl1">
+              <button class="timeline-trigger" aria-expanded="false" aria-controls="tl1-body">
+                <div class="tl-header-text">
+                  <div class="tl-company">Amazon</div>
+                  <div class="tl-role">Marketing Manager — Private Labels &amp; E-commerce</div>
+                  <div class="tl-dates">May 2022 – Mar 2026 · ~4 years · Bangalore</div>
+                </div>
+                <span class="tl-badge">Most Recent</span>
+              </button>
+              <div class="timeline-body" id="tl1-body" role="region">
+                <div class="timeline-body-inner">
+                  <ul class="tl-bullets">
+                    <li class="tl-bullet">Led end-to-end marketing for Vedaka and other Amazon private label brands, scaling portfolio revenue from ₹300Cr to ₹500Cr.</li>
+                    <li class="tl-bullet">Owned ₹60Cr+ annual AMS and off-platform budget; implemented data-driven attribution that unlocked ₹6Cr in annualised savings.</li>
+                    <li class="tl-bullet">Launched 500+ products using a standardised go-to-market playbook built from scratch, reducing average time-to-market significantly.</li>
+                    <li class="tl-bullet">Ran 14+ CRO experiments on product detail pages and brand stores, delivering a +180 bps aggregate conversion rate improvement.</li>
+                    <li class="tl-bullet">Placeholder bullet — add a key leadership or strategic impact point here.</li>
+                    <li class="tl-bullet">Placeholder bullet — add a collaboration, cross-functional, or data-driven insight point here.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ColorTokens -->
+        <div class="timeline-item">
+          <div class="timeline-spine">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div>
+            <div class="timeline-card" id="tl2">
+              <button class="timeline-trigger" aria-expanded="false" aria-controls="tl2-body">
+                <div class="tl-header-text">
+                  <div class="tl-company">ColorTokens</div>
+                  <div class="tl-role">Digital Marketing Manager — B2B SaaS, Cybersecurity</div>
+                  <div class="tl-dates">May 2020 – Apr 2022 · 2 years · Bangalore / Remote</div>
+                </div>
+                <span class="tl-badge blue">B2B SaaS</span>
+              </button>
+              <div class="timeline-body" id="tl2-body" role="region">
+                <div class="timeline-body-inner">
+                  <ul class="tl-bullets">
+                    <li class="tl-bullet">Built demand generation from zero for a Series B cybersecurity startup, owning all digital channels including LinkedIn, Google, and content.</li>
+                    <li class="tl-bullet">Reduced CPL by 50% in 6 months through ICP refinement, ABM targeting, and a 5-stage HubSpot nurture sequence.</li>
+                    <li class="tl-bullet">Owned the company website on WordPress: redesign, SEO, page speed, and CRO across 40+ pages.</li>
+                    <li class="tl-bullet">Produced gated content (whitepapers, solution briefs, ROI calculators) that became top pipeline drivers for the enterprise sales team.</li>
+                    <li class="tl-bullet">Placeholder bullet — add a metrics-driven result or team leadership point here.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earlier Roles -->
+        <div class="timeline-item muted">
+          <div class="timeline-spine">
+            <div class="timeline-dot"></div>
+          </div>
+          <div>
+            <div class="timeline-card" id="tl3">
+              <button class="timeline-trigger" aria-expanded="false" aria-controls="tl3-body">
+                <div class="tl-header-text">
+                  <div class="tl-company">Earlier Roles</div>
+                  <div class="tl-role">Digital Marketing roles across [Company A], [Company B]</div>
+                  <div class="tl-dates">~2015 – 2020 · ~5 years</div>
+                </div>
+                <span class="tl-badge blue">5 Years</span>
+              </button>
+              <div class="timeline-body" id="tl3-body" role="region">
+                <div class="timeline-body-inner">
+                  <ul class="tl-bullets">
+                    <li class="tl-bullet">Placeholder — add Company A: role title, key achievement, and dates.</li>
+                    <li class="tl-bullet">Placeholder — add Company B: role title, key achievement, and dates.</li>
+                    <li class="tl-bullet">Placeholder — add Company C or earlier experience if applicable.</li>
+                    <li class="tl-bullet">During this period completed ISB (Indian School of Business) [Programme Name] — add year and context here.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       ABOUT
+  ========================= -->
+  <section id="about" aria-label="About Anita Yadav">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Background</p>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>
+            I'm a Senior Digital &amp; E-commerce Marketer with 9.5 years of experience building brands, scaling revenue, and running high-performing marketing teams across e-commerce and B2B SaaS. Most recently at Amazon, I led marketing for private label brands — turning ₹300Cr portfolios into ₹500Cr ones and building the processes that made 500+ product launches possible.
+          </p>
+          <p>
+            My background combines the rigour of performance marketing with the strategic thinking of brand building. I'm equally comfortable pulling attribution data in GA4 as I am presenting a brand repositioning to senior leadership. I hold an MBA from the Indian School of Business (ISB), which sharpened my ability to connect marketing to business outcomes at a leadership level.
+          </p>
+          <p>
+            Placeholder — add 2–3 sentences about your personal interests, working style, what energises you, or what you're looking for in your next role. This humanises your profile for recruiters and gives hiring managers a sense of cultural fit.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="about-highlight-card">
+            <span class="highlight-icon" aria-hidden="true">🎓</span>
+            <div>
+              <div class="highlight-label">Education</div>
+              <div class="highlight-value">MBA, Indian School of Business (ISB)</div>
+            </div>
+          </div>
+          <div class="about-highlight-card">
+            <span class="highlight-icon" aria-hidden="true">🏢</span>
+            <div>
+              <div class="highlight-label">Most Recent</div>
+              <div class="highlight-value">Marketing Manager, Amazon (May 2022 – Mar 2026)</div>
+            </div>
+          </div>
+          <div class="about-highlight-card">
+            <span class="highlight-icon" aria-hidden="true">📍</span>
+            <div>
+              <div class="highlight-label">Location</div>
+              <div class="highlight-value">Bangalore, India · Open to hybrid &amp; remote</div>
+            </div>
+          </div>
+          <div class="about-highlight-card">
+            <span class="highlight-icon" aria-hidden="true">🎯</span>
+            <div>
+              <div class="highlight-label">Expertise</div>
+              <div class="highlight-value">E-commerce Marketing, Performance, Brand Strategy, Demand Gen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       CONTACT
+  ========================= -->
+  <section id="contact" aria-label="Contact and connect">
+    <div class="container contact-inner">
+      <p class="contact-eyebrow">Let's Talk</p>
+      <h2 class="contact-heading">Open to the Right Opportunity</h2>
+      <p class="contact-sub">Looking for a senior digital marketing or growth leadership role at a technology company. Let's see if there's a fit.</p>
+      <div class="contact-ctas">
+        <a href="https://www.linkedin.com/in/anita-yadav" target="_blank" rel="noopener noreferrer" class="btn btn-white" aria-label="Connect with Anita on LinkedIn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Connect on LinkedIn
+        </a>
+        <a href="anita-yadav-resume.pdf" download class="btn btn-ghost" aria-label="Download Anita Yadav's resume">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 Anita Yadav · Senior Digital &amp; E-commerce Marketer · Bangalore</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/anita-yadav" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="anita-yadav-resume.pdf" download>Resume</a>
+        <a href="mailto:anita@example.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================
+       STICKY WIDGET
+  ========================= -->
+  <div id="sticky-widget" role="complementary" aria-label="Quick contact links">
+    <a href="https://www.linkedin.com/in/anita-yadav"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="sticky-btn sticky-linkedin"
+       data-tip="LinkedIn"
+       aria-label="View Anita Yadav on LinkedIn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+    <a href="anita-yadav-resume.pdf"
+       download
+       class="sticky-btn sticky-resume"
+       data-tip="Download Resume"
+       aria-label="Download Anita Yadav's resume">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ========================
+       JAVASCRIPT
+  ========================= -->
+  <script>
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // ── Mobile menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      hamburger.setAttribute('aria-expanded', menuOpen);
+      mobileMenu.setAttribute('aria-hidden', !menuOpen);
+      mobileMenu.style.display = menuOpen ? 'flex' : 'none';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        hamburger.setAttribute('aria-expanded', false);
+        mobileMenu.setAttribute('aria-hidden', true);
+        mobileMenu.style.display = 'none';
+      });
+    });
+
+    // ── Generic accordion ──
+    function initAccordion(selector, bodySelector) {
+      document.querySelectorAll(selector).forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item   = trigger.closest('[id]');
+          const bodyId = trigger.getAttribute('aria-controls');
+          const body   = document.getElementById(bodyId);
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          trigger.setAttribute('aria-expanded', !isOpen);
+          item.classList.toggle('open', !isOpen);
+
+          if (!isOpen) {
+            body.style.maxHeight = body.scrollHeight + 'px';
+          } else {
+            body.style.maxHeight = '0';
+          }
+        });
+
+        // Keyboard: Enter / Space
+        trigger.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
+          }
+        });
+      });
+    }
+
+    initAccordion('.accordion-trigger', '.accordion-body');
+    initAccordion('.timeline-trigger', '.timeline-body');
+
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ── Active nav highlight on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-links a');
+
+    function setActiveNav() {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 90) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color    = a.getAttribute('href') === '#' + current ? 'var(--navy)' : '';
+        a.style.fontWeight = a.getAttribute('href') === '#' + current ? '600' : '';
+      });
+    }
+
+    window.addEventListener('scroll', setActiveNav, { passive: true });
+  </script>
+
+</body>
+</html>
