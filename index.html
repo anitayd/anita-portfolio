@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anita Yadav — Senior Digital & E-commerce Marketer. ISB grad, ex-Amazon. 9.5 years scaling ₹500Cr portfolios." />
-  <title>Anita Yadav | Senior Digital & E-commerce Marketer</title>
+  <meta name="description" content="Anita Yadav — Senior Digital &amp; Growth Marketing Professional. ISB PGP Co'20, ex-Amazon. 9.5 years scaling ₹500Cr portfolios." />
+  <title>Anita Yadav | Senior Digital &amp; Growth Marketing Professional</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -113,30 +114,40 @@
     .nav-logo span { color: var(--blue-btn); }
     .nav-links {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
     }
-    .nav-links a {
+    .nav-cta-primary {
       font-size: .82rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      padding: 6px 12px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--navy);
+      padding: 7px 16px;
       border-radius: 8px;
-      transition: color var(--transition), background var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--transition);
     }
-    .nav-links a:hover {
+    .nav-cta-primary:hover { background: var(--navy-mid); }
+    .nav-cta-secondary {
+      font-size: .82rem;
+      font-weight: 600;
       color: var(--navy);
-      background: var(--blue-soft);
+      background: transparent;
+      border: 1.5px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color var(--transition), background var(--transition), color var(--transition);
     }
-    .nav-cta {
-      font-size: .82rem !important;
-      font-weight: 600 !important;
-      color: var(--bg-card) !important;
-      background: var(--navy) !important;
-      padding: 7px 16px !important;
-      border-radius: 8px !important;
+    .nav-cta-secondary:hover {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: #fff;
     }
-    .nav-cta:hover { background: var(--navy-mid) !important; }
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -153,17 +164,20 @@
     .mobile-menu {
       display: none;
       flex-direction: column;
-      gap: 2px;
+      gap: 8px;
       padding: 12px 16px 16px;
       background: var(--bg-card);
       border-top: 1px solid var(--border);
     }
     .mobile-menu a {
       font-size: .9rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text);
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       transition: background var(--transition);
     }
     .mobile-menu a:hover { background: var(--blue-soft); }
@@ -224,22 +238,50 @@
       color: var(--blue-btn);
       margin-bottom: 16px;
     }
-    .hero-location {
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .hero-meta-item {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-size: .85rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
     }
     .hero-tagline {
-      font-size: clamp(.95rem, 1.6vw, 1.1rem);
+      font-size: clamp(.93rem, 1.6vw, 1.05rem);
       color: var(--text-muted);
-      max-width: 560px;
-      line-height: 1.65;
-      margin-bottom: 36px;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 18px;
     }
     .hero-tagline strong { color: var(--navy); }
+    .hero-specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .hero-specialties-label {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .hero-specialty-pill {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--navy-mid);
+      background: var(--blue-soft);
+      border: 1px solid rgba(74,144,196,.25);
+      border-radius: 20px;
+      padding: 5px 12px;
+      white-space: nowrap;
+    }
     .hero-ctas {
       display: flex;
       flex-wrap: wrap;
@@ -276,9 +318,7 @@
       color: #fff;
       transform: translateY(-2px);
     }
-    .hero-photo {
-      flex-shrink: 0;
-    }
+    .hero-photo { flex-shrink: 0; }
     .photo-ring {
       width: clamp(160px, 18vw, 220px);
       height: clamp(160px, 18vw, 220px);
@@ -288,22 +328,14 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 0 6px #fff, 0 0 0 10px var(--blue-soft), var(--shadow-md);
-      position: relative;
       overflow: hidden;
     }
-    .photo-placeholder-icon {
-      width: 70%;
-      height: 70%;
-      opacity: .45;
-    }
-    .photo-label {
-      position: absolute;
-      bottom: 8px;
-      font-size: .65rem;
-      color: var(--text-muted);
-      background: rgba(255,255,255,.85);
-      padding: 2px 8px;
-      border-radius: 20px;
+    .photo-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
     }
 
     /* ===========================
@@ -357,49 +389,10 @@
        SKILLS & TOOLS
     =========================== */
     #skills { background: var(--bg-card); }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-    .tool-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: var(--transition);
-      cursor: default;
-    }
-    .tool-card:hover {
-      border-color: var(--blue);
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-3px);
-    }
-    .tool-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-    }
-    .tool-name {
-      font-size: .78rem;
-      font-weight: 500;
-      color: var(--text);
-      text-align: center;
-      line-height: 1.3;
-    }
     .skills-categories {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
     .skill-category {
       background: var(--bg);
@@ -408,7 +401,7 @@
       padding: 22px 24px;
     }
     .skill-category-title {
-      font-size: .78rem;
+      font-size: .75rem;
       font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -421,7 +414,7 @@
       gap: 6px;
     }
     .skill-tag {
-      font-size: .78rem;
+      font-size: .77rem;
       color: var(--text);
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -503,14 +496,13 @@
       transition: max-height .45s cubic-bezier(.4,0,.2,1);
     }
     .accordion-body-inner {
-      padding: 0 24px 28px;
+      padding: 24px 24px 28px;
       border-top: 1px solid var(--border);
-      padding-top: 24px;
     }
     .cs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr 1.9fr 1fr;
+      gap: 28px;
       margin-bottom: 20px;
     }
     .cs-block-title {
@@ -525,6 +517,14 @@
       font-size: .88rem;
       color: var(--text-muted);
       line-height: 1.65;
+    }
+    .cs-block-text .cs-numbered-point {
+      display: block;
+      margin-top: 10px;
+    }
+    .cs-block-text .cs-numbered-point:first-child { margin-top: 0; }
+    @media (max-width: 700px) {
+      .cs-grid { grid-template-columns: 1fr; }
     }
     .cs-metrics {
       display: flex;
@@ -594,7 +594,7 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 20px 20px;
+      padding: 20px;
       text-align: left;
       transition: background var(--transition);
     }
@@ -605,7 +605,7 @@
       color: var(--navy);
     }
     .tl-role {
-      font-size: .9rem;
+      font-size: .88rem;
       font-weight: 500;
       color: var(--blue-btn);
       margin-top: 2px;
@@ -632,12 +632,38 @@
     .timeline-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .45s cubic-bezier(.4,0,.2,1);
+      transition: max-height .5s cubic-bezier(.4,0,.2,1);
     }
     .timeline-body-inner {
       padding: 0 20px 20px;
       border-top: 1px solid var(--border);
       padding-top: 16px;
+    }
+    /* Sub-role blocks inside Amazon card */
+    .tl-subrole {
+      margin-bottom: 24px;
+    }
+    .tl-subrole:last-child { margin-bottom: 0; }
+    .tl-subrole-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .tl-subrole-title {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .tl-subrole-dates {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .tl-subrole + .tl-subrole {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
     }
     .tl-bullets {
       display: flex;
@@ -663,9 +689,7 @@
     /* ===========================
        ABOUT
     =========================== */
-    #about {
-      background: var(--bg);
-    }
+    #about { background: var(--bg); }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -870,9 +894,11 @@
         text-align: center;
       }
       .hero-photo { justify-self: center; order: -1; }
-      .hero-location, .hero-badge { justify-content: center; }
+      .hero-meta { justify-content: center; }
+      .hero-badge { justify-content: center; }
       .hero-ctas { justify-content: center; }
       .hero-tagline { margin-inline: auto; }
+      .hero-specialties { text-align: center; }
       .impact-bar {
         grid-template-columns: repeat(2, 1fr);
         padding: 32px 24px;
@@ -896,7 +922,7 @@
       .impact-item:nth-child(odd) { border-right: none; }
       .tools-grid { grid-template-columns: repeat(3, 1fr); }
       .accordion-trigger { padding: 16px; }
-      .accordion-body-inner { padding: 0 16px 20px; padding-top: 16px; }
+      .accordion-body-inner { padding: 16px 16px 20px; }
       #sticky-widget {
         bottom: 20px;
         right: 50%;
@@ -921,25 +947,39 @@
   <nav id="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
       <a class="nav-logo" href="#hero">Anita <span>Yadav</span></a>
-      <div class="nav-links" role="list">
-        <a href="#impact" role="listitem">Impact</a>
-        <a href="#skills" role="listitem">Skills</a>
-        <a href="#casestudies" role="listitem">Case Studies</a>
-        <a href="#career" role="listitem">Career</a>
-        <a href="#about" role="listitem">About</a>
-        <a href="#contact" class="nav-cta" role="listitem">Let's Connect</a>
+      <div class="nav-links">
+        <a href="https://www.linkedin.com/in/anita11/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="nav-cta-primary"
+           aria-label="Connect with Anita on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Let's Connect
+        </a>
+        <a href="Anita_Yadav_Resume.pdf"
+           download
+           class="nav-cta-secondary"
+           aria-label="Download Anita Yadav's resume">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
       </div>
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="mobile-menu" id="mobile-menu" role="list" aria-hidden="true">
-      <a href="#impact" role="listitem">Impact</a>
-      <a href="#skills" role="listitem">Skills</a>
-      <a href="#casestudies" role="listitem">Case Studies</a>
-      <a href="#career" role="listitem">Career</a>
-      <a href="#about" role="listitem">About</a>
-      <a href="#contact" role="listitem">Let's Connect</a>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="https://www.linkedin.com/in/anita11/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Connect with Anita on LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Let's Connect on LinkedIn
+      </a>
+      <a href="Anita_Yadav_Resume.pdf" download aria-label="Download resume">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
     </div>
   </nav>
 
@@ -952,37 +992,61 @@
         <div class="hero-content">
           <div class="hero-badge">
             <div class="hero-badge-dot"></div>
-            Open to Senior Digital Marketing &amp; Growth Roles
+            Open to Senior Marketing &amp; Growth Roles
           </div>
           <h1 class="hero-name">Anita Yadav</h1>
-          <p class="hero-title">Senior Digital &amp; E-commerce Marketer</p>
-          <p class="hero-location" aria-label="Location: Bangalore, India">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Bangalore, India
-          </p>
+          <p class="hero-title">Senior Digital &amp; Growth Marketing Professional</p>
+
+          <div class="hero-meta">
+            <span class="hero-meta-item" aria-label="Location: Bangalore, India">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Bangalore, India
+            </span>
+            <span class="hero-meta-item" aria-label="ISB PGP Class of 2020">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              ISB PGP Co'20
+            </span>
+          </div>
+
           <p class="hero-tagline">
-            Senior marketer who's scaled <strong>₹500Cr portfolios</strong>, launched <strong>500+ products</strong>, and driven <strong>multi-crore growth</strong> at Amazon and tech startups
+            Senior marketer with <strong>9.5 years</strong> spanning agency, B2B SaaS, and e-commerce. I've built
+            <strong>demand gen engines from scratch</strong> (ColorTokens), optimized conversion funnels for
+            <strong>millions of visitors</strong> (Amazon seller acquisition), scaled
+            <strong>₹500Cr brand portfolios</strong> (Amazon PB), and launched <strong>500+ products</strong>.
+            I transition seamlessly between brand storytelling and performance optimization, making
+            data-backed decisions to drive growth.
           </p>
+
+          <div class="hero-specialties">
+            <span class="hero-specialties-label">Specialist in:</span>
+            <span class="hero-specialty-pill">Growth Marketing</span>
+            <span class="hero-specialty-pill">GTM &amp; Product Launches</span>
+            <span class="hero-specialty-pill">Brand Strategy &amp; Content</span>
+            <span class="hero-specialty-pill">Performance Optimization (SEO, SEM, CRO)</span>
+          </div>
+
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary" aria-label="Connect on LinkedIn">
+            <a href="https://www.linkedin.com/in/anita11/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="Connect with Anita on LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               Connect on LinkedIn
             </a>
-            <a href="#casestudies" class="btn btn-outline" aria-label="View case studies">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              View Case Studies
+            <a href="Anita_Yadav_Resume.pdf"
+               download
+               class="btn btn-outline"
+               aria-label="Download Anita Yadav's resume">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume
             </a>
           </div>
         </div>
 
         <div class="hero-photo">
-          <div class="photo-ring" aria-label="Profile photo placeholder">
-            <!-- Placeholder portrait SVG -->
-            <svg class="photo-placeholder-icon" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="40" cy="28" r="20" fill="rgba(21,38,64,.35)"/>
-              <path d="M6 88c0-18.778 15.222-34 34-34s34 15.222 34 34" fill="rgba(21,38,64,.25)"/>
-            </svg>
-            <span class="photo-label">Add photo</span>
+          <div class="photo-ring" aria-label="Photo of Anita Yadav">
+            <img src="anita-photo.jpg" alt="Anita Yadav — Senior Digital &amp; Growth Marketing Professional" />
           </div>
         </div>
       </div>
@@ -1025,142 +1089,117 @@
         <h2 class="section-title">Skills &amp; Tools</h2>
       </div>
 
-      <!-- Visual Tool Grid -->
-      <div class="tools-grid reveal" role="list" aria-label="Tools and platforms">
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#FF9900;color:#fff;" aria-hidden="true">A</div>
-          <span class="tool-name">Amazon AMS</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#4285F4;color:#fff;" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 1 1 0-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0 0 12.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
-          </div>
-          <span class="tool-name">Google Ads</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#E37400;color:#fff;" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          </div>
-          <span class="tool-name">Google Analytics</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#34A853;color:#fff;" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-          </div>
-          <span class="tool-name">SEO / SEM</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#FFE01B;color:#222;" aria-hidden="true">✉</div>
-          <span class="tool-name">Email Automation</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#A8C8E8;color:#152640;" aria-hidden="true">A/B</div>
-          <span class="tool-name">A/B Testing</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#FF7A59;color:#fff;" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="white" d="M12 6v6l4 2"/></svg>
-          </div>
-          <span class="tool-name">HubSpot</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#21759B;color:#fff;" aria-hidden="true">WP</div>
-          <span class="tool-name">WordPress CMS</span>
-        </div>
-        <div class="tool-card" role="listitem">
-          <div class="tool-icon" style="background:#F5C842;color:#152640;" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-          </div>
-          <span class="tool-name">Performance Mktg</span>
-        </div>
-      </div>
-
       <!-- Searchable Categories -->
       <div class="skills-categories reveal" aria-label="Skill categories">
+
         <div class="skill-category">
-          <div class="skill-category-title">Performance Marketing</div>
+          <div class="skill-category-title">Product Marketing &amp; Launches</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Go-to-market strategy</span>
+            <span class="skill-tag">Product lifecycle management</span>
+            <span class="skill-tag">Launch planning</span>
+            <span class="skill-tag">Demand Generation</span>
+            <span class="skill-tag">User acquisition</span>
+            <span class="skill-tag">Competitive Analysis</span>
+            <span class="skill-tag">Positioning &amp; messaging</span>
+            <span class="skill-tag">Cross-functional coordination</span>
+            <span class="skill-tag">Sales Enablement &amp; Toolkits</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">UX and Conversion</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">Conversion rate optimization (CRO)</span>
+            <span class="skill-tag">A/B testing</span>
+            <span class="skill-tag">Landing page optimization</span>
+            <span class="skill-tag">User journey mapping</span>
+            <span class="skill-tag">Funnel analytics</span>
+            <span class="skill-tag">Customer segmentation</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Brand, Content &amp; Creative</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Brand positioning</span>
+            <span class="skill-tag">Visual identity systems</span>
+            <span class="skill-tag">Creative direction</span>
+            <span class="skill-tag">Packaging transformation</span>
+            <span class="skill-tag">Content strategy</span>
+            <span class="skill-tag">Brand storytelling</span>
+            <span class="skill-tag">Agency management</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Performance Marketing &amp; Paid Growth</div>
           <div class="skill-tags">
             <span class="skill-tag">Paid Search (PPC)</span>
-            <span class="skill-tag">Amazon AMS / DSP</span>
+            <span class="skill-tag">Amazon Sponsored Ads (AMS)</span>
             <span class="skill-tag">Google Ads</span>
-            <span class="skill-tag">LinkedIn Ads</span>
-            <span class="skill-tag">Retargeting</span>
-            <span class="skill-tag">Bid Management</span>
-            <span class="skill-tag">CPL Optimization</span>
+            <span class="skill-tag">SEM</span>
+            <span class="skill-tag">Paid Social</span>
+            <span class="skill-tag">Campaign optimization</span>
+            <span class="skill-tag">Budget allocation</span>
+            <span class="skill-tag">ROAS/ACOS management</span>
           </div>
         </div>
+
         <div class="skill-category">
-          <div class="skill-category-title">Analytics &amp; Insights</div>
+          <div class="skill-category-title">Strategic Marketing Leadership</div>
           <div class="skill-tags">
-            <span class="skill-tag">Google Analytics 4</span>
+            <span class="skill-tag">P&amp;L Responsibility</span>
+            <span class="skill-tag">Budget Forecasting &amp; Allocation</span>
+            <span class="skill-tag">Talent Mentorship</span>
+            <span class="skill-tag">Strategic Roadmap Development</span>
+            <span class="skill-tag">Executive Communication</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Customer Lifecycle Marketing</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Onboarding Journey Design</span>
+            <span class="skill-tag">RFM segmentation</span>
+            <span class="skill-tag">Customer acquisition</span>
+            <span class="skill-tag">Retention programs</span>
+            <span class="skill-tag">Lifecycle nurture</span>
+            <span class="skill-tag">Behavioral triggers</span>
+            <span class="skill-tag">Coupon strategy</span>
+            <span class="skill-tag">Repeat purchase optimization</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Marketing Technology &amp; Automation</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HubSpot</span>
+            <span class="skill-tag">Pardot</span>
+            <span class="skill-tag">Google Analytics</span>
             <span class="skill-tag">Adobe Analytics</span>
-            <span class="skill-tag">Mixpanel</span>
-            <span class="skill-tag">Data Studio</span>
-            <span class="skill-tag">Funnel Analysis</span>
-            <span class="skill-tag">Cohort Analysis</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Conversion Optimisation</div>
-          <div class="skill-tags">
-            <span class="skill-tag">CRO</span>
-            <span class="skill-tag">A/B &amp; Multivariate Testing</span>
-            <span class="skill-tag">Landing Page Optimisation</span>
-            <span class="skill-tag">UX Copywriting</span>
-            <span class="skill-tag">Heatmaps</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Marketing Technology</div>
-          <div class="skill-tags">
-            <span class="skill-tag">HubSpot CRM</span>
-            <span class="skill-tag">Marketo</span>
-            <span class="skill-tag">Salesforce</span>
-            <span class="skill-tag">Mailchimp</span>
-            <span class="skill-tag">WordPress</span>
-            <span class="skill-tag">Hotjar</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Content &amp; Creative</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Brand Strategy</span>
-            <span class="skill-tag">Content Marketing</span>
-            <span class="skill-tag">Copywriting</span>
-            <span class="skill-tag">SEO Content</span>
-            <span class="skill-tag">Video Briefing</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Product Marketing</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Go-to-Market Strategy</span>
-            <span class="skill-tag">Product Positioning</span>
-            <span class="skill-tag">Competitive Analysis</span>
-            <span class="skill-tag">Pricing Strategy</span>
-            <span class="skill-tag">Launch Planning</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Technical</div>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML / CSS basics</span>
-            <span class="skill-tag">Tag Manager</span>
-            <span class="skill-tag">Pixel Implementation</span>
-            <span class="skill-tag">API Integrations</span>
-            <span class="skill-tag">SQL (basic)</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-category-title">Project Management</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Agile / Scrum</span>
-            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">SEMrush</span>
             <span class="skill-tag">Asana</span>
-            <span class="skill-tag">OKR Frameworks</span>
-            <span class="skill-tag">Cross-functional Leadership</span>
+            <span class="skill-tag">Marketing automation</span>
+            <span class="skill-tag">Email nurture programs</span>
+            <span class="skill-tag">CMS (WordPress, LEGO)</span>
           </div>
         </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Analytics &amp; Experimentation</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Marketing analytics</span>
+            <span class="skill-tag">Experiment design</span>
+            <span class="skill-tag">Data-driven decision making</span>
+            <span class="skill-tag">Performance reporting</span>
+            <span class="skill-tag">Budget modelling</span>
+            <span class="skill-tag">Spends optimization</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1183,8 +1222,8 @@
           <button class="accordion-trigger" aria-expanded="false" aria-controls="cs1-body">
             <div class="accordion-num">01</div>
             <div class="accordion-header-text">
-              <div class="accordion-title">Vedaka Brand Transformation</div>
-              <div class="accordion-preview">Repositioned Amazon's private label from value to premium, driving significant category share gains.</div>
+              <div class="accordion-title">Vedaka Brand Transformation — Redefining a ₹150Cr+ Consumer Brand</div>
+              <div class="accordion-preview">Repositioned Amazon's private label grocery brand with a full visual identity overhaul, achieving 100% brand compliance across 200 SKUs and 8–10% conversion improvement.</div>
             </div>
             <div class="accordion-chevron" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1195,25 +1234,28 @@
               <div class="cs-grid">
                 <div>
                   <div class="cs-block-title">Challenge</div>
-                  <p class="cs-block-text">Vedaka was perceived as a low-cost, low-trust private label brand. Customer acquisition costs were high and repeat purchase rates lagged category benchmarks. The brand lacked a distinct identity across its 200+ SKU catalogue.</p>
+                  <p class="cs-block-text">Vedaka is Amazon's private label grocery brand and is the #2 staples brand on the marketplace but had weak brand equity. The visual identity and packaging felt generic and commodity-like, and there was no cohesive brand story connecting with customers. The brand was positioned purely on price, leaving no room for storytelling or emotional connection.</p>
                 </div>
                 <div>
                   <div class="cs-block-title">Strategy</div>
-                  <p class="cs-block-text">Led end-to-end brand repositioning: new visual identity system, refreshed packaging hierarchy, a storytelling-led content framework, and a targeted AMS campaign architecture that surfaced Vedaka to high-intent shoppers at key decision moments.</p>
+                  <p class="cs-block-text">Led a comprehensive brand transformation across positioning, visual identity, and customer touchpoints.
+                    <span class="cs-numbered-point">1. <strong>Brand positioning refresh:</strong> Shifted from pure price-play to 'connected to Indian agrarian culture' — quality products families rely on, at accessible prices.</span>
+                    <span class="cs-numbered-point">2. <strong>Visual identity overhaul:</strong> Created new brand guidelines covering color systems, typography, photography style, and packaging templates. Worked with design agencies to develop lifestyle-forward packaging that communicated quality and trust.</span>
+                    <span class="cs-numbered-point">3. <strong>Content transformation:</strong> Rewrote product page content, images and infographics to emphasize freshness and sourcing. Introduced lifestyle imagery and usage scenarios.</span>
+                  </p>
                 </div>
                 <div>
                   <div class="cs-block-title">Results</div>
-                  <p class="cs-block-text">Placeholder — add your real outcomes here. Describe the business impact across revenue, market share, customer metrics, and operational improvements that resulted from this initiative.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">My Role</div>
-                  <p class="cs-block-text">Lead Marketer — end-to-end ownership from brief to execution, coordinating brand, design, category, and agency teams across 3 quarters.</p>
+                  <p class="cs-block-text">
+                    <strong>Visual consistency:</strong> Achieved 100% brand guideline compliance across 200 SKUs within 6 months.<br/><br/>
+                    <strong>Conversion improvement:</strong> Refreshed product pages showed +8–10% conversion rate improvement.
+                  </p>
                 </div>
               </div>
               <div class="cs-metrics" aria-label="Key metrics">
-                <div class="cs-metric">+XX% Revenue Growth</div>
-                <div class="cs-metric">+XX bps Category Share</div>
-                <div class="cs-metric">XX% Repeat Purchase Lift</div>
+                <div class="cs-metric">8–10% Conversion Improvement</div>
+                <div class="cs-metric">200 SKUs Revamped</div>
+                <div class="cs-metric">100% Brand Compliance</div>
               </div>
             </div>
           </div>
@@ -1224,8 +1266,8 @@
           <button class="accordion-trigger" aria-expanded="false" aria-controls="cs2-body">
             <div class="accordion-num">02</div>
             <div class="accordion-header-text">
-              <div class="accordion-title">Performance Marketing Optimisation at Scale</div>
-              <div class="accordion-preview">Reallocated ₹60Cr+ ad budget using data-driven attribution, generating ₹6Cr in annualised savings.</div>
+              <div class="accordion-title">Website Conversion Rate Optimisation — +180 bps Improvement in Seller Acquisition Funnel</div>
+              <div class="accordion-preview">Improved seller acquisition CVR from 3.38% to 4.73% (+135 bps) across 11.3MM annual visits to sell.amazon.in through systematic CRO, UX experiments, and mobile optimization.</div>
             </div>
             <div class="accordion-chevron" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1236,25 +1278,25 @@
               <div class="cs-grid">
                 <div>
                   <div class="cs-block-title">Challenge</div>
-                  <p class="cs-block-text">A ₹60Cr+ annual ad spend was spread across 12+ channels with no unified attribution model. Last-click reporting was over-crediting bottom-funnel channels and under-investing in awareness and mid-funnel touchpoints.</p>
+                  <p class="cs-block-text">sell.amazon.in, Amazon India's seller acquisition website, had a conversion problem. Only 3.38% of visitors started registration, well below target. The funnel had friction due to unclear process steps, poor mobile experience, and a clunky onboarding flow. With 11.3MM annual visits, every basis point of conversion mattered.</p>
                 </div>
                 <div>
                   <div class="cs-block-title">Strategy</div>
-                  <p class="cs-block-text">Built a multi-touch attribution model using GA4 + internal data. Ran a 90-day budget reallocation experiment, shifting 18% of spend from over-indexed channels. Introduced ROAS guardrails and weekly performance rituals with agency partners.</p>
+                  <p class="cs-block-text">Led a systematic CRO program across messaging, UX, and product optimization.
+                    <span class="cs-numbered-point">1. <strong>Process clarity:</strong> Created a step-by-step registration guide and FAQ page for troubleshooting common drop-off points in the funnel.</span>
+                    <span class="cs-numbered-point">2. <strong>UX experiments:</strong> Ran 20+ experiments on page layout, CTA placement, form field reduction, and trust signals (seller testimonials, success stories). Prioritized mobile experience improvements given 60%+ mobile traffic.</span>
+                    <span class="cs-numbered-point">3. <strong>Onboarding friction reduction:</strong> Partnered with the product team to simplify the registration form and reduce drop-offs at the most leaky stages of the funnel.</span>
+                  </p>
                 </div>
                 <div>
                   <div class="cs-block-title">Results</div>
-                  <p class="cs-block-text">Placeholder — replace with the real story. Quantify the savings, the change in ROAS, and any secondary effects on pipeline quality or sales team efficiency.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">My Role</div>
-                  <p class="cs-block-text">Project Owner — designed attribution framework, led agency briefings, and presented budget reallocation recommendations to senior leadership.</p>
+                  <p class="cs-block-text"><strong>Conversion improvement:</strong> V2RS (Visit to Registration Start) improved from 3.38% to 4.73% — a meaningful uplift across millions of monthly visitors.</p>
                 </div>
               </div>
               <div class="cs-metrics" aria-label="Key metrics">
-                <div class="cs-metric">₹6Cr Annualised Savings</div>
-                <div class="cs-metric">+XX% ROAS Improvement</div>
-                <div class="cs-metric">XX% Reduction in CAC</div>
+                <div class="cs-metric">11.3MM Annual Visits</div>
+                <div class="cs-metric">+135 bps CVR Improvement</div>
+                <div class="cs-metric">20+ UX Experiments Shipped</div>
               </div>
             </div>
           </div>
@@ -1265,8 +1307,8 @@
           <button class="accordion-trigger" aria-expanded="false" aria-controls="cs3-body">
             <div class="accordion-num">03</div>
             <div class="accordion-header-text">
-              <div class="accordion-title">Website Conversion Rate Optimisation</div>
-              <div class="accordion-preview">A systematic CRO programme delivered a +180 bps conversion rate uplift across key landing pages.</div>
+              <div class="accordion-title">B2B SaaS Demand Generation — 50% CPL Reduction at ColorTokens</div>
+              <div class="accordion-preview">Rebuilt a broken demand gen engine from scratch for a cybersecurity startup, cutting cost-per-lead from $780 to $410, doubling email open rates, and growing organic traffic 30% YoY.</div>
             </div>
             <div class="accordion-chevron" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1277,25 +1319,29 @@
               <div class="cs-grid">
                 <div>
                   <div class="cs-block-title">Challenge</div>
-                  <p class="cs-block-text">High traffic, low conversion. Paid campaign landing pages had a 1.2% CVR — well below industry benchmarks. Exit surveys pointed to trust gaps, poor page speed, and unclear calls-to-action.</p>
+                  <p class="cs-block-text">At ColorTokens, a B2B cybersecurity SaaS startup, I inherited a broken email marketing engine. My predecessor had used low-quality email lists, tanking domain reputation and causing emails to land in spam. Google Ads campaigns were poorly structured with broad keywords and weak targeting, resulting in $780 cost-per-lead — unsustainable for a startup.</p>
                 </div>
                 <div>
                   <div class="cs-block-title">Strategy</div>
-                  <p class="cs-block-text">Ran a 6-month structured CRO programme: heatmap analysis (Hotjar), qualitative user interviews, 14 A/B tests covering headlines, social proof placement, form friction, and page speed improvements in partnership with engineering.</p>
+                  <p class="cs-block-text">Rebuilt demand generation from the ground up across paid, organic, and email channels.
+                    <span class="cs-numbered-point">1. <strong>Database cleanup &amp; email recovery:</strong> Purged dubious lists, implemented double opt-in, segmented by buyer journey stage (awareness, consideration, decision). Created lifecycle nurture tracks in HubSpot — introductory content for cold leads, technical deep-dives for warm, case studies for hot.</span>
+                    <span class="cs-numbered-point">2. <strong>Google Ads restructuring:</strong> Rebuilt keyword strategy around high-intent searches (CISOs/CIOs searching for micro-segmentation, zero-trust architecture); rewrote ad copy emphasizing specific pain points; created dedicated landing pages by use case; added negative keywords to exclude unqualified traffic.</span>
+                    <span class="cs-numbered-point">3. <strong>SEO &amp; content strategy:</strong> Conducted keyword research for target buyer personas; created pillar-cluster content strategy; fixed technical SEO issues — improved site health from 76% to 95%; built backlinks through PR partnerships and syndicated content.</span>
+                  </p>
                 </div>
                 <div>
                   <div class="cs-block-title">Results</div>
-                  <p class="cs-block-text">Placeholder — replace with actual numbers. Describe the before/after CVR, revenue impact, and which specific tests drove the most gains.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">My Role</div>
-                  <p class="cs-block-text">CRO Lead — designed test roadmap, wrote test briefs, interpreted results, and created a reusable CRO playbook adopted by the broader marketing team.</p>
+                  <p class="cs-block-text">
+                    Cost-per-lead dropped from <strong>$780 to $410 (−50%)</strong>.<br/><br/>
+                    Email open rates doubled: <strong>11% → 22%</strong> after database cleanup and segmentation.<br/><br/>
+                    Organic traffic grew <strong>30% YoY</strong>. Site health <strong>76% → 95%</strong>, domain authority <strong>35 → 42</strong>, bounce rate <strong>80% → 66%</strong>.
+                  </p>
                 </div>
               </div>
               <div class="cs-metrics" aria-label="Key metrics">
-                <div class="cs-metric">+180 bps CVR Uplift</div>
-                <div class="cs-metric">14 A/B Tests Shipped</div>
-                <div class="cs-metric">XX% Increase in MQLs</div>
+                <div class="cs-metric">−50% Cost-per-Lead</div>
+                <div class="cs-metric">2× Email Open Rate</div>
+                <div class="cs-metric">30% YoY Organic Traffic</div>
               </div>
             </div>
           </div>
@@ -1306,8 +1352,8 @@
           <button class="accordion-trigger" aria-expanded="false" aria-controls="cs4-body">
             <div class="accordion-num">04</div>
             <div class="accordion-header-text">
-              <div class="accordion-title">B2B SaaS Demand Generation</div>
-              <div class="accordion-preview">Rebuilt demand gen from scratch for a cybersecurity startup, achieving 50% CPL reduction in 6 months.</div>
+              <div class="accordion-title">New Product Launch Process at Scale — 500+ Products Annually</div>
+              <div class="accordion-preview">Built an end-to-end launch operations system that reduced average SLA from 60 to 35 days (−42%) while maintaining cost levels and scaling to 500+ launches, contributing ₹100Cr in new-launch sales.</div>
             </div>
             <div class="accordion-chevron" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -1318,66 +1364,29 @@
               <div class="cs-grid">
                 <div>
                   <div class="cs-block-title">Challenge</div>
-                  <p class="cs-block-text">ColorTokens had strong enterprise technology but low market awareness. The existing demand gen was fragmented, running disconnected LinkedIn and Google campaigns with no nurture flows. CPL exceeded $XX and pipeline quality was poor.</p>
+                  <p class="cs-block-text">Amazon Private Brands India launches 500+ products annually across grocery, health &amp; personal care and toys categories. The launch process worked but had multiple breaks — cross-functional collaboration required across ~10 teams (sourcing, compliance, legal, imaging studio, creative agencies, category, in-stock, AMS agency). Ensuring adherence to standardized workflows, consistent content quality, and meeting SLAs was challenging. Launch SLAs averaged 60 days; important launches got delayed.</p>
                 </div>
                 <div>
                   <div class="cs-block-title">Strategy</div>
-                  <p class="cs-block-text">Built an ABM-influenced demand gen engine: ICP-defined audience segments, a 5-stage HubSpot nurture sequence, gated thought-leadership content (whitepapers, ROI calculators), and LinkedIn lead gen campaigns targeted by title and industry vertical.</p>
+                  <p class="cs-block-text">Built an end-to-end launch operations system combining process optimization, technology, and AI.
+                    <span class="cs-numbered-point">1. <strong>Process standardization:</strong> Created launch playbooks by product complexity tier (new sizes vs. new variant vs. white spaces); documented SOPs and mental models for each workstream; established first-time-right quality bars with agencies; implemented launch scorecard tracking on-time delivery, content quality, and post-launch performance.</span>
+                    <span class="cs-numbered-point">2. <strong>Agency optimization:</strong> Let go of a large agency and onboarded an AI-enabled agency and a 3D rendering vendor, reducing packaging artwork SLA and creative SLA to half of prior benchmarks.</span>
+                    <span class="cs-numbered-point">3. <strong>AI integration:</strong> Piloted AI-generated product page imagery (lifestyle shots, 3D renders, infographics) for low-complexity products; used GenAI for SEO-optimized titles and bullet points integrated with top search keywords.</span>
+                  </p>
                 </div>
                 <div>
                   <div class="cs-block-title">Results</div>
-                  <p class="cs-block-text">Placeholder — describe the pipeline impact, CPL reduction, and how this translated into sales-qualified opportunities and closed revenue.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">My Role</div>
-                  <p class="cs-block-text">Head of Digital Marketing — sole owner of demand gen strategy, managed a small agency and coordinated closely with Sales for SLA definition and lead handoff.</p>
-                </div>
-              </div>
-              <div class="cs-metrics" aria-label="Key metrics">
-                <div class="cs-metric">50% CPL Reduction</div>
-                <div class="cs-metric">XX% Pipeline Growth</div>
-                <div class="cs-metric">XX% MQL-to-SQL Rate</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CS 5 -->
-        <div class="accordion-item" id="cs5">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="cs5-body">
-            <div class="accordion-num">05</div>
-            <div class="accordion-header-text">
-              <div class="accordion-title">New Product Launch Process Improvement</div>
-              <div class="accordion-preview">Designed a scalable launch playbook that enabled 500+ product launches with consistent quality and speed.</div>
-            </div>
-            <div class="accordion-chevron" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-          </button>
-          <div class="accordion-body" id="cs5-body" role="region">
-            <div class="accordion-body-inner">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-title">Challenge</div>
-                  <p class="cs-block-text">New product launches were ad-hoc, slow, and inconsistent. No standardised brief, no cross-functional checklist, and no post-launch review process. Each launch reinvented the wheel, creating bottlenecks and missed go-live deadlines.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">Strategy</div>
-                  <p class="cs-block-text">Audited 40 prior launches to identify failure modes. Built a modular launch playbook: standard brief template, RACI matrix, a 6-week pre-launch countdown, and a 30/60/90-day post-launch review framework adopted across the marketing function.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">Results</div>
-                  <p class="cs-block-text">Placeholder — describe the efficiency gains, reduction in time-to-market, and how this process underpinned the 500+ products successfully launched.</p>
-                </div>
-                <div>
-                  <div class="cs-block-title">My Role</div>
-                  <p class="cs-block-text">Process Owner — designed the framework, ran training workshops with 3 cross-functional teams, and maintained the playbook as a living document over 2 years.</p>
+                  <p class="cs-block-text">
+                    Reduced average SLA from <strong>60 days to 35 days (−42%)</strong>.<br/><br/>
+                    Costs held flat while launch velocity increased significantly.<br/><br/>
+                    Successfully launched <strong>500+ products in 2024</strong>; new launches contributed <strong>20% of annual sales (₹100Cr)</strong>.
+                  </p>
                 </div>
               </div>
               <div class="cs-metrics" aria-label="Key metrics">
                 <div class="cs-metric">500+ Products Launched</div>
-                <div class="cs-metric">XX% Faster Time-to-Market</div>
-                <div class="cs-metric">XX% On-time Launch Rate</div>
+                <div class="cs-metric">−42% Launch SLA (60→35 days)</div>
+                <div class="cs-metric">₹100Cr New Launch Revenue</div>
               </div>
             </div>
           </div>
@@ -1409,22 +1418,44 @@
             <div class="timeline-card" id="tl1">
               <button class="timeline-trigger" aria-expanded="false" aria-controls="tl1-body">
                 <div class="tl-header-text">
-                  <div class="tl-company">Amazon</div>
-                  <div class="tl-role">Marketing Manager — Private Labels &amp; E-commerce</div>
+                  <div class="tl-company">Amazon India</div>
+                  <div class="tl-role">Marketing Manager — Private Brands &amp; Seller Acquisition</div>
                   <div class="tl-dates">May 2022 – Mar 2026 · ~4 years · Bangalore</div>
                 </div>
                 <span class="tl-badge">Most Recent</span>
               </button>
               <div class="timeline-body" id="tl1-body" role="region">
                 <div class="timeline-body-inner">
-                  <ul class="tl-bullets">
-                    <li class="tl-bullet">Led end-to-end marketing for Vedaka and other Amazon private label brands, scaling portfolio revenue from ₹300Cr to ₹500Cr.</li>
-                    <li class="tl-bullet">Owned ₹60Cr+ annual AMS and off-platform budget; implemented data-driven attribution that unlocked ₹6Cr in annualised savings.</li>
-                    <li class="tl-bullet">Launched 500+ products using a standardised go-to-market playbook built from scratch, reducing average time-to-market significantly.</li>
-                    <li class="tl-bullet">Ran 14+ CRO experiments on product detail pages and brand stores, delivering a +180 bps aggregate conversion rate improvement.</li>
-                    <li class="tl-bullet">Placeholder bullet — add a key leadership or strategic impact point here.</li>
-                    <li class="tl-bullet">Placeholder bullet — add a collaboration, cross-functional, or data-driven insight point here.</li>
-                  </ul>
+
+                  <div class="tl-subrole">
+                    <div class="tl-subrole-header">
+                      <div class="tl-subrole-title">Category Marketing Manager — Private Brands</div>
+                      <div class="tl-subrole-dates">Jul 2024 – Mar 2026</div>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li class="tl-bullet">Led end-to-end marketing for a ₹500Cr Amazon Private Brands portfolio (Amazon Basics, Vedaka, Presto, Solimo, Jam &amp; Honey) across grocery, health &amp; personal care, toys categories.</li>
+                      <li class="tl-bullet">New product launches: Led GTM and launch marketing for 500+ products annually, building scalable frameworks for packaging, content, SEO, product page experience, and sponsored ads strategy. New launches contributed 20% of annual sales (₹100Cr).</li>
+                      <li class="tl-bullet">Performance marketing: Managed ₹50Cr annual Amazon Sponsored Ads budget, optimizing ASIN-level allocation, campaign structure, and bidding strategy. Improved TACOS by 120 bps, unlocking ₹6Cr in annual savings.</li>
+                      <li class="tl-bullet">Brand transformation: Led Vedaka brand repositioning and visual identity overhaul — rewrote brand guidelines, redesigned 200+ product packaging, transformed product page storytelling, improving conversions by 8–10%.</li>
+                      <li class="tl-bullet">Customer lifecycle marketing: Improved customer acquisition and repeat purchase through RFM segmentation, behavior-based targeting (views, past purchases, Prime status), and strategic coupon programs. Delivered +7% new-to-brand orders and 12% improvement in repeat rates.</li>
+                      <li class="tl-bullet">AI-led efficiency: Scaled AI-enabled creative production (3D renders, lifestyle imagery, SEO content) through agency partnerships, reducing launch SLA by ~40% (35 days from 60 days) while maintaining quality standards.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tl-subrole">
+                    <div class="tl-subrole-header">
+                      <div class="tl-subrole-title">Marketing Manager — Website, Seller Acquisition</div>
+                      <div class="tl-subrole-dates">May 2022 – Jul 2024</div>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li class="tl-bullet">Owned website strategy and conversion optimization for sell.amazon.in and smbhav.amazon.in, driving third-party seller acquisition for Amazon India marketplace.</li>
+                      <li class="tl-bullet">Conversion rate optimization: Improved website conversion (V2RS) from 2.9% to 4.7% (+180 bps) through messaging clarity, UX experiments, mobile optimization, and onboarding friction reduction.</li>
+                      <li class="tl-bullet">Organic traffic growth: Scaled organic traffic to 979K in Q1'24 (+31.5% YoY) through SEO strategy, content optimization, and technical improvements — offsetting 58% SEM budget cuts while maintaining acquisition targets.</li>
+                      <li class="tl-bullet">User experience &amp; analytics: Delivered optimized experiences across 11.3MM annual visits (sell.amazon.in) and 650K (smbhav.amazon.in), supported by funnel analytics, A/B testing framework, and performance dashboards.</li>
+                      <li class="tl-bullet">CMS bar-raiser: Served as consultant for LEGO (Amazon's in-house CMS) for 10+ teams, providing best practices on content structure, SEO, and page performance.</li>
+                    </ul>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1450,11 +1481,11 @@
               <div class="timeline-body" id="tl2-body" role="region">
                 <div class="timeline-body-inner">
                   <ul class="tl-bullets">
-                    <li class="tl-bullet">Built demand generation from zero for a Series B cybersecurity startup, owning all digital channels including LinkedIn, Google, and content.</li>
-                    <li class="tl-bullet">Reduced CPL by 50% in 6 months through ICP refinement, ABM targeting, and a 5-stage HubSpot nurture sequence.</li>
-                    <li class="tl-bullet">Owned the company website on WordPress: redesign, SEO, page speed, and CRO across 40+ pages.</li>
-                    <li class="tl-bullet">Produced gated content (whitepapers, solution briefs, ROI calculators) that became top pipeline drivers for the enterprise sales team.</li>
-                    <li class="tl-bullet">Placeholder bullet — add a metrics-driven result or team leadership point here.</li>
+                    <li class="tl-bullet">Owned full-funnel B2B SaaS demand generation for a cybersecurity startup targeting mid-market CIOs/CISOs in the US. Led end-to-end demand gen strategy — Google Ads, SEO, landing pages, email nurture, webinar marketing — generating 250+ leads annually with 14% MQL conversion rate.</li>
+                    <li class="tl-bullet">Google Ads optimization: Managed $100K annual budget; restructured keyword strategy, campaign architecture, and ad copy to reduce cost-per-lead by 50% (from $780 to $410).</li>
+                    <li class="tl-bullet">SEO &amp; content marketing: Scaled organic traffic 30% YoY through pillar-cluster content strategy, technical SEO fixes, and site health improvements (76% → 95% site health, 35 → 42 domain authority, 80% → 66% bounce rate).</li>
+                    <li class="tl-bullet">Email marketing recovery: Rebuilt email program after domain reputation damage — cleaned database, implemented segmentation by buyer journey stage, created HubSpot nurture tracks, doubled open rates (11% → 22%).</li>
+                    <li class="tl-bullet">Sales enablement: Created searchable content repository organized by buyer stage and industry, enabling sales team to leverage existing assets they didn't know existed.</li>
                   </ul>
                 </div>
               </div>
@@ -1472,19 +1503,53 @@
               <button class="timeline-trigger" aria-expanded="false" aria-controls="tl3-body">
                 <div class="tl-header-text">
                   <div class="tl-company">Earlier Roles</div>
-                  <div class="tl-role">Digital Marketing roles across [Company A], [Company B]</div>
-                  <div class="tl-dates">~2015 – 2020 · ~5 years</div>
+                  <div class="tl-role">S&amp;P Global · Grapes Digital · GoodService</div>
+                  <div class="tl-dates">2015 – 2019 · 3.5 years</div>
                 </div>
-                <span class="tl-badge blue">5 Years</span>
+                <span class="tl-badge blue">Pre-MBA Roles</span>
               </button>
               <div class="timeline-body" id="tl3-body" role="region">
                 <div class="timeline-body-inner">
-                  <ul class="tl-bullets">
-                    <li class="tl-bullet">Placeholder — add Company A: role title, key achievement, and dates.</li>
-                    <li class="tl-bullet">Placeholder — add Company B: role title, key achievement, and dates.</li>
-                    <li class="tl-bullet">Placeholder — add Company C or earlier experience if applicable.</li>
-                    <li class="tl-bullet">During this period completed ISB (Indian School of Business) [Programme Name] — add year and context here.</li>
-                  </ul>
+
+                  <div class="tl-subrole">
+                    <div class="tl-subrole-header">
+                      <div class="tl-subrole-title">S&amp;P Global — Fact Checker, Business News</div>
+                      <div class="tl-subrole-dates">Mar 2017 – Mar 2019 · Gurgaon</div>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li class="tl-bullet">Researched, analyzed, and vetted financial news for investment bankers across 8 international locations. Saved $200K annually under quality assurance program by catching errors before client delivery.</li>
+                      <li class="tl-bullet">Reviewed 40+ articles daily across sectors (banking, energy, healthcare, real estate) ensuring accuracy and style compliance.</li>
+                      <li class="tl-bullet">Earned two Bronze ACE awards for leadership and mentoring; formalized onboarding process used across Manila, Gurgaon, and Islamabad offices.</li>
+                      <li class="tl-bullet">Introduced refresher training program for 15 peers across multiple countries, improving team performance and reducing repeat errors.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tl-subrole">
+                    <div class="tl-subrole-header">
+                      <div class="tl-subrole-title">Grapes Digital — Senior Account Manager</div>
+                      <div class="tl-subrole-dates">Feb 2016 – Mar 2017 · Delhi</div>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li class="tl-bullet">Managed digital marketing campaigns for large consumer brands (Horlicks, Videocon, Eicher Motors) at a digital marketing agency. Generated ₹6M in revenue; promoted to Senior Account Manager within 3 months.</li>
+                      <li class="tl-bullet">Account growth: Expanded Kenstar account to secure Videocon, Kelvinator, and Sansui, adding 3× revenue.</li>
+                      <li class="tl-bullet">Product launch marketing: Led Horlicks Growth+ online launch — influencer partnerships, mommy blogger outreach, trending Twitter hashtag execution.</li>
+                      <li class="tl-bullet">Social media &amp; ORM: Managed social presence and content calendars for multiple brands; response time &lt;2 hours for customer escalations.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tl-subrole">
+                    <div class="tl-subrole-header">
+                      <div class="tl-subrole-title">GoodService — Content Marketing Associate</div>
+                      <div class="tl-subrole-dates">Jun 2015 – Jan 2016 · Delhi</div>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li class="tl-bullet">Led marketing and growth for a Sequoia-funded personal concierge app, working directly with founders in a lean startup environment.</li>
+                      <li class="tl-bullet">User acquisition: Ran Facebook ad campaigns achieving 20,000+ app downloads at ₹28 CAC.</li>
+                      <li class="tl-bullet">Retention marketing: Designed in-app engagement prompts and offers, boosting app usage by 30%.</li>
+                      <li class="tl-bullet">Word-of-mouth growth: Built organic advocacy program, securing 300+ user reviews on social media within 4 months through targeted customer outreach.</li>
+                    </ul>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1507,13 +1572,13 @@
       <div class="about-grid reveal">
         <div class="about-text">
           <p>
-            I'm a Senior Digital &amp; E-commerce Marketer with 9.5 years of experience building brands, scaling revenue, and running high-performing marketing teams across e-commerce and B2B SaaS. Most recently at Amazon, I led marketing for private label brands — turning ₹300Cr portfolios into ₹500Cr ones and building the processes that made 500+ product launches possible.
+            I'm a senior marketer with 9.5 years building and scaling consumer brands across e-commerce, B2B SaaS, and digital-first businesses. I started my career agency-side at Grapes Digital and a Sequoia-backed startup, learned to build demand gen engines from scratch at ColorTokens, and spent the last four years at Amazon India — first optimizing seller acquisition funnels, then leading marketing for a ₹500Cr Private Brands portfolio.
           </p>
           <p>
-            My background combines the rigour of performance marketing with the strategic thinking of brand building. I'm equally comfortable pulling attribution data in GA4 as I am presenting a brand repositioning to senior leadership. I hold an MBA from the Indian School of Business (ISB), which sharpened my ability to connect marketing to business outcomes at a leadership level.
+            I'm an ISB grad (PGP 2019–20, Marketing &amp; Strategy) who geeks out on brand storytelling and performance optimization. I've had the opportunity to work on the creative side (brand positioning, packaging, content) as well as the analytical side (CRO, experiment design, performance marketing) of marketing. I've launched 500+ products, managed ₹60Cr+ in annual marketing budgets, and built mechanisms that scale.
           </p>
           <p>
-            Placeholder — add 2–3 sentences about your personal interests, working style, what energises you, or what you're looking for in your next role. This humanises your profile for recruiters and gives hiring managers a sense of cultural fit.
+            Outside work, I'm a distance runner (3 half marathons), competitive Ultimate Frisbee player (India Masters tournaments), and recreational squash player. I grew up in Delhi NCR and currently live in Bangalore. I am currently exploring senior marketing roles in growth, digital, and product marketing.
           </p>
         </div>
         <div class="about-highlights">
@@ -1521,28 +1586,28 @@
             <span class="highlight-icon" aria-hidden="true">🎓</span>
             <div>
               <div class="highlight-label">Education</div>
-              <div class="highlight-value">MBA, Indian School of Business (ISB)</div>
+              <div class="highlight-value">PGP Co'20, Indian School of Business (ISB)</div>
             </div>
           </div>
           <div class="about-highlight-card">
             <span class="highlight-icon" aria-hidden="true">🏢</span>
             <div>
               <div class="highlight-label">Most Recent</div>
-              <div class="highlight-value">Marketing Manager, Amazon (May 2022 – Mar 2026)</div>
+              <div class="highlight-value">Marketing Manager, Amazon India (May 2022 – Mar 2026)</div>
             </div>
           </div>
           <div class="about-highlight-card">
             <span class="highlight-icon" aria-hidden="true">📍</span>
             <div>
               <div class="highlight-label">Location</div>
-              <div class="highlight-value">Bangalore, India · Open to hybrid &amp; remote</div>
+              <div class="highlight-value">Bangalore, India</div>
             </div>
           </div>
           <div class="about-highlight-card">
             <span class="highlight-icon" aria-hidden="true">🎯</span>
             <div>
               <div class="highlight-label">Expertise</div>
-              <div class="highlight-value">E-commerce Marketing, Performance, Brand Strategy, Demand Gen</div>
+              <div class="highlight-value">Product Marketing, Brand, Content &amp; Creative, UX &amp; Conversion, Performance Marketing &amp; Growth</div>
             </div>
           </div>
         </div>
@@ -1557,13 +1622,20 @@
     <div class="container contact-inner">
       <p class="contact-eyebrow">Let's Talk</p>
       <h2 class="contact-heading">Open to the Right Opportunity</h2>
-      <p class="contact-sub">Looking for a senior digital marketing or growth leadership role at a technology company. Let's see if there's a fit.</p>
+      <p class="contact-sub">Looking for a senior marketing, digital or growth leadership role at a startup or technology company. Let's see if there's a fit.</p>
       <div class="contact-ctas">
-        <a href="https://www.linkedin.com/in/anita-yadav" target="_blank" rel="noopener noreferrer" class="btn btn-white" aria-label="Connect with Anita on LinkedIn">
+        <a href="https://www.linkedin.com/in/anita11/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-white"
+           aria-label="Connect with Anita on LinkedIn">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           Connect on LinkedIn
         </a>
-        <a href="anita-yadav-resume.pdf" download class="btn btn-ghost" aria-label="Download Anita Yadav's resume">
+        <a href="Anita_Yadav_Resume.pdf"
+           download
+           class="btn btn-ghost"
+           aria-label="Download Anita Yadav's resume">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Resume
         </a>
@@ -1576,11 +1648,10 @@
   ========================= -->
   <footer role="contentinfo">
     <div class="container footer-inner">
-      <p class="footer-copy">© 2026 Anita Yadav · Senior Digital &amp; E-commerce Marketer · Bangalore</p>
+      <p class="footer-copy">© 2026 Anita Yadav · Senior Digital &amp; Growth Marketing Professional · Bangalore</p>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/anita-yadav" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="anita-yadav-resume.pdf" download>Resume</a>
-        <a href="mailto:anita@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/anita11/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="Anita_Yadav_Resume.pdf" download>Resume</a>
       </div>
     </div>
   </footer>
@@ -1589,7 +1660,7 @@
        STICKY WIDGET
   ========================= -->
   <div id="sticky-widget" role="complementary" aria-label="Quick contact links">
-    <a href="https://www.linkedin.com/in/anita-yadav"
+    <a href="https://www.linkedin.com/in/anita11/"
        target="_blank"
        rel="noopener noreferrer"
        class="sticky-btn sticky-linkedin"
@@ -1601,7 +1672,7 @@
         <circle cx="4" cy="4" r="2"/>
       </svg>
     </a>
-    <a href="anita-yadav-resume.pdf"
+    <a href="Anita_Yadav_Resume.pdf"
        download
        class="sticky-btn sticky-resume"
        data-tip="Download Resume"
@@ -1645,8 +1716,8 @@
       });
     });
 
-    // ── Generic accordion ──
-    function initAccordion(selector, bodySelector) {
+    // ── Generic accordion (case studies + timeline cards) ──
+    function initAccordion(selector) {
       document.querySelectorAll(selector).forEach(trigger => {
         trigger.addEventListener('click', () => {
           const item   = trigger.closest('[id]');
@@ -1658,13 +1729,13 @@
           item.classList.toggle('open', !isOpen);
 
           if (!isOpen) {
+            // Temporarily set to auto to measure, then animate
             body.style.maxHeight = body.scrollHeight + 'px';
           } else {
             body.style.maxHeight = '0';
           }
         });
 
-        // Keyboard: Enter / Space
         trigger.addEventListener('keydown', e => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -1674,38 +1745,21 @@
       });
     }
 
-    initAccordion('.accordion-trigger', '.accordion-body');
-    initAccordion('.timeline-trigger', '.timeline-body');
+    initAccordion('.accordion-trigger');
+    initAccordion('.timeline-trigger');
 
     // ── Scroll reveal ──
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
+    const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    reveals.forEach(el => observer.observe(el));
-
-    // ── Active nav highlight on scroll ──
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks  = document.querySelectorAll('.nav-links a');
-
-    function setActiveNav() {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 90) current = s.id;
-      });
-      navLinks.forEach(a => {
-        a.style.color    = a.getAttribute('href') === '#' + current ? 'var(--navy)' : '';
-        a.style.fontWeight = a.getAttribute('href') === '#' + current ? '600' : '';
-      });
-    }
-
-    window.addEventListener('scroll', setActiveNav, { passive: true });
+    reveals.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
